@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import reducer from './reducer/postReducer';
-import { createPost, deletePost } from './actions/postActions';
+import { createPost, deletePost, updatePost, deleteOnePost } from './actions/postActions';
 
 const store = createStore(reducer);
 
@@ -18,3 +18,8 @@ console.log('created POST 2...', store.getState());
 
 store.dispatch(deletePost());
 console.log('post DELETE', store.getState());
+store.dispatch(deleteOnePost(1));
+console.log('post DELETE_ONE', store.getState());
+
+// store.dispatch(updatePost({ title: 'DUH', body: 'DUH' }));
+// console.log('post UPDATE', store.getState());
