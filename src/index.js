@@ -1,32 +1,20 @@
 import { createStore } from 'redux';
-
-const initialState = {
-  posts: []
-};
-
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case 'POST':
-      return { ...state, posts: [...state.posts, { title: action.payload.title,
-        body: action.payload.body }
-      ] };
-    case 'DELETE':
-      return { ...state, posts: null };
-    default:
-      return state;
-  }
-}
+import reducer from './reducer/postReducer';
+import { createPost, deletePost } from './actions/postActions';
 
 const store = createStore(reducer);
 
-store.dispatch({
-  type: 'POST',
-  payload: { title: 'Hey! SUCKA', body: 'Wordy words words' }
-});
+store.dispatch(createPost({
+  title: 'Sup',
+  body: 'We are Words and words and stuff'
+}));
 console.log('created POST', store.getState());
 
-store.dispatch({
-  type: 'DELETE',
-  payload: null
-});
+store.dispatch(createPost({
+  title: 'Again',
+  body: '.......body......'
+}));
+console.log('created POST 2...', store.getState());
+
+store.dispatch(deletePost());
 console.log('post DELETE', store.getState());
