@@ -16,7 +16,7 @@ export const deleteOnePost = (id) => ({
   payload: { id }
 });
 
-// export const updatePost = (i, body) => ({
-//   type: UPDATE,
-//   payload: { i, body }
-// });
+export const updatePost = (i, body) => ({
+  type: UPDATE,
+  payload: { i, body }
+});
