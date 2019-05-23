@@ -1,20 +1,21 @@
 import { createStore } from 'redux';
 import reducer from './reducer/postReducer';
-import { createPost, deletePost } from './actions/postActions';
+import { createPost, deletePost, deleteOnePost, updatePost } from './actions/postActions';
 
 const store = createStore(reducer);
 
-store.dispatch(createPost({
-  title: 'Sup',
-  body: 'We are Words and words and stuff'
-}));
-console.log('created POST', store.getState());
+store.dispatch(createPost(
+  'Sup', 'We are Words and words and stuff'
+));
+store.dispatch(createPost(
+  'Again', '.......body......'
+));
+console.log('POSTS', store.getState());
 
-store.dispatch(createPost({
-  title: 'Again',
-  body: '.......body......'
-}));
-console.log('created POST 2...', store.getState());
+store.dispatch(updatePost(1, 'new updated body'));
+console.log('UPDATE', store.getState());
 
+store.dispatch(deleteOnePost(0));
+console.log('DELETE_ONE', store.getState());
 store.dispatch(deletePost());
-console.log('post DELETE', store.getState());
+console.log('DELETE', store.getState());

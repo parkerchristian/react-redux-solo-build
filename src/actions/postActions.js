@@ -3,9 +3,9 @@ export const DELETE = 'DELETE';
 export const DELETE_ONE = 'DELETE_ONE';
 export const UPDATE = 'UPDATE';
 
-export const createPost = (postContent) => ({
+export const createPost = (title, body) => ({
   type: POST,
-  payload: postContent
+  payload: { title, body }
 });
 
 export const deletePost = () => ({
@@ -13,10 +13,10 @@ export const deletePost = () => ({
 });
 export const deleteOnePost = (id) => ({
   type: DELETE_ONE,
-  payload: { id }
+  payload: id
 });
 
-export const updatePost = (i, body) => ({
+export const updatePost = (id, body) => ({
   type: UPDATE,
-  payload: { i, body }
+  payload: { id, body }
 });
