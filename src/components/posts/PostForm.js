@@ -27,14 +27,20 @@ export default class PostForm extends PureComponent {
     const change = this.handleChange;
     const submit = this.handleSubmit;
     const { title, body } = this.state;
-    const css = { display: 'block' };
+    const css = { 
+      display: 'block',
+      margin: '5px'
+    };
 
     return (
-      <form onSubmit={submit} style={css}>
-        <input name="title" value={title} onChange={change} style={css} />
-        <textarea name="body" value={body} onChange={change} style={css} />
-        <button>Submit</button>
-      </form>
+      <div style={css}>
+        Create a Post !
+        <form onSubmit={submit} style={css}>
+          <input name="title" value={title} onChange={change} style={css} />
+          <textarea name="body" value={body} onChange={change} style={css} />
+          <button>Submit</button>
+        </form>
+      </div>
     );
   }
 }
