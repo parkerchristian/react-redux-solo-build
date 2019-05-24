@@ -1,8 +1,10 @@
 import React from 'react';
-import Post from '../components/posts/Post';
+import CreatePost from '../containers/CreatePost';
 
 export default function App() {
   return (
-    <Post />
+    <>
+      <CreatePost />
+    </>
   );
 }
