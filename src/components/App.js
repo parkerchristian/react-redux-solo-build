@@ -1,13 +1,13 @@
 import React from 'react';
 import CreatePost from '../containers/CreatePost';
 import AllPosts from '../containers/AllPosts';
-import CommentForm from './comments/CommentForm';
+import CreateComment from '../containers/CreateComment';
 
 export default function App() {
   return (
     <>
       <CreatePost />
-      <CommentForm />
+      <CreateComment />
       <AllPosts />
     </>
   );

@@ -9,9 +9,9 @@ export default class CommentForm extends PureComponent {
   state = {
     comment: ''
   }
-
+ 
   handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.vaule });
+    this.setState({ [target.name]: target.value });
   }
 
   handleSubmit = event => {
