@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Comment from './Comment';
 
 function Comments({ comments }) {
-  const commentList = comments.map(comment => {
+  const commentList = comments.map((comment, i) => {
     return (
-      <li key={comment.id}>
-        <Comment comment={comment} />
+      <li key={i}>
+        <Comment id={i} comment={comment} />
       </li>
     );
   });
